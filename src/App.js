@@ -1,4 +1,3 @@
-import AdminMap from "./components/AdminMap";
 import {
   BrowserRouter,
   Routes,
@@ -9,6 +8,9 @@ import BusTracker from "./components/BusTracker";
 
 import StudentMap from "./components/StudentMap";
 
+import AdminMap from "./components/AdminMap";
+
+
 function App() {
 
   return (
@@ -16,24 +18,24 @@ function App() {
     <BrowserRouter>
 
       <Routes>
-        <Routes>
 
-  <Route
-    path="/bus"
-    element={<BusTracker />}
-  />
+        <Route
+          path="/bus"
+          element={<BusTracker />}
+        />
 
-  <Route
-    path="/student"
-    element={<StudentMap />}
-  />
+        <Route
+          path="/student"
+          element={<StudentMap />}
+        />
 
-  <Route
-    path="/admin"
-    element={<AdminMap />}
-  />
+        <Route
+          path="/admin"
+          element={<AdminMap />}
+        />
 
-</Routes>
+      </Routes>
+
     </BrowserRouter>
 
   );

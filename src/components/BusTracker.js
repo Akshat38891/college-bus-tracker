@@ -54,7 +54,7 @@ function BusTracker() {
         set(ref(database, `users/${userId}`), {
 
           latitude: pos.coords.latitude,
-          longitude: pos.coords.longitude
+          longitude: pos.coords.longitude,
           name: "Student User"
 
         });
