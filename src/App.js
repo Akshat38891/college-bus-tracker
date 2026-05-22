@@ -1,3 +1,4 @@
+import AdminMap from "./components/AdminMap";
 import {
   BrowserRouter,
   Routes,
@@ -15,19 +16,24 @@ function App() {
     <BrowserRouter>
 
       <Routes>
+        <Routes>
 
-        <Route
-          path="/bus"
-          element={<BusTracker />}
-        />
+  <Route
+    path="/bus"
+    element={<BusTracker />}
+  />
 
-        <Route
-          path="/student"
-          element={<StudentMap />}
-        />
+  <Route
+    path="/student"
+    element={<StudentMap />}
+  />
 
-      </Routes>
+  <Route
+    path="/admin"
+    element={<AdminMap />}
+  />
 
+</Routes>
     </BrowserRouter>
 
   );
