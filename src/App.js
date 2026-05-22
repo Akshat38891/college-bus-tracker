@@ -1,14 +1,35 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
 import BusTracker from "./components/BusTracker";
+
+import StudentMap from "./components/StudentMap";
+
 
 function App() {
 
   return (
 
-    <div>
+    <BrowserRouter>
 
-      <BusTracker />
+      <Routes>
 
-    </div>
+        <Route
+          path="/bus"
+          element={<BusTracker />}
+        />
+
+        <Route
+          path="/student"
+          element={<StudentMap />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
 
   );
 }
