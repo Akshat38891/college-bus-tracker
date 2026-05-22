@@ -31,6 +31,7 @@ const busIcon = new L.Icon({
 
 
 function BusTracker() {
+    const userId = Date.now();
 
   const [position, setPosition] = useState(null);
 
@@ -50,10 +51,11 @@ function BusTracker() {
 
         // FIREBASE UPDATE
 
-        set(ref(database, "busLocation"), {
+        set(ref(database, `users/${userId}`), {
 
           latitude: pos.coords.latitude,
           longitude: pos.coords.longitude
+          name: "Student User"
 
         });
 
