@@ -1,1 +1,12 @@
-@import "leaflet/dist/leaflet.css";
+body{
+  margin:0;
+  padding:0;
+  background:#0f172a;
+  color:white;
+  font-family:Arial;
+}
+
+h1{
+  text-align:center;
+  padding:15px;
+}

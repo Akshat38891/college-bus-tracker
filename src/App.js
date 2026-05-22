@@ -4,6 +4,8 @@ import {
   Route
 } from "react-router-dom";
 
+import Navbar from "./components/Navbar";
+
 import BusTracker from "./components/BusTracker";
 
 import StudentMap from "./components/StudentMap";
@@ -16,6 +18,8 @@ function App() {
   return (
 
     <BrowserRouter>
+
+      <Navbar />
 
       <Routes>
 
