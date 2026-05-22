@@ -1,4 +1,4 @@
-import StudentMap from "./components/StudentMap";
+import BusTracker from "./components/BusTracker";
 
 function App() {
 
@@ -6,9 +6,7 @@ function App() {
 
     <div>
 
-      <h1>Student Tracking Screen</h1>
-
-      <StudentMap />
+      <BusTracker />
 
     </div>
 
