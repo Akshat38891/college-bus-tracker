@@ -31,7 +31,7 @@ const busIcon = new L.Icon({
 
 
 function BusTracker() {
-    const userId = Date.now();
+    const [userId] = useState(Date.now());
 
   const [position, setPosition] = useState(null);
 
