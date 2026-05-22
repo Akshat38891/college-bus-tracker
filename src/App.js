@@ -8,7 +8,6 @@ import BusTracker from "./components/BusTracker";
 
 import StudentMap from "./components/StudentMap";
 
-
 function App() {
 
   return (
