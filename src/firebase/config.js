@@ -1,6 +1,12 @@
 import { initializeApp } from "firebase/app";
 
-import { getDatabase } from "firebase/database";
+import {
+  getDatabase
+} from "firebase/database";
+
+import {
+  getAuth
+} from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -9,7 +15,7 @@ const firebaseConfig = {
 
   authDomain: "college-bus-tracker-6b510.firebaseapp.com",
 
-  databaseURL: "https://college-bus-tracker-6b510-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  databaseURL: "https://college-bus-tracker-6b510-default-rtdb.asia-southeast1.firebasedatabase.app",
 
   projectId: "college-bus-tracker-6b510",
 
@@ -25,3 +31,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const database = getDatabase(app);
+
+export const auth = getAuth(app);

@@ -1,30 +1,31 @@
-import { Link } from "react-router-dom";
-
 function Navbar() {
 
   return (
 
-    <div
-      style={{
-        display:"flex",
-        justifyContent:"center",
-        gap:"20px",
-        padding:"15px",
-        background:"#1e293b"
-      }}
-    >
+    <div className="bg-slate-900 p-4 flex items-center justify-between shadow-lg rounded-2xl mb-6">
 
-      <Link to="/student">
-        Student
-      </Link>
+      <div>
 
-      <Link to="/bus">
-        Bus
-      </Link>
+        <h1 className="text-2xl font-bold text-white">
 
-      <Link to="/admin">
-        Admin
-      </Link>
+          Bus Tracker
+
+        </h1>
+
+        <p className="text-slate-400 text-sm">
+
+          Real-time College Transport
+
+        </p>
+
+      </div>
+
+
+      <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-xl font-bold text-white">
+
+        A
+
+      </div>
 
     </div>
 

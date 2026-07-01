@@ -96,7 +96,7 @@ function MapComponent() {
 
   return (
 
-    <div style={{ height: "500px", width: "100%" }}>
+    <div style={{ height: "100vh", width: "100%" }}>
 
       <MapContainer
         center={position}
