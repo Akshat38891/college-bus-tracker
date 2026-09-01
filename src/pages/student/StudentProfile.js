@@ -5,13 +5,10 @@ import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 function StudentProfile() {
-
   const navigate = useNavigate();
-
   const [student, setStudent] = useState({});
 
   useEffect(() => {
-
     const user = auth.currentUser;
 
     if (!user) {
@@ -20,73 +17,41 @@ function StudentProfile() {
     }
 
     const fetchData = async () => {
+      try {
+        const snapshot = await get(ref(database, `students/${user.uid}`));
 
-      const snapshot = await get(
-        ref(database, `students/${user.uid}`)
-      );
-
-      if (snapshot.exists()) {
-        setStudent(snapshot.val());
+        if (snapshot.exists()) {
+          setStudent(snapshot.val());
+        }
+      } catch (error) {
+        console.log(error);
       }
-
     };
 
     fetchData();
-
-  }, []);
+  }, [navigate]); // ✅ Fix
 
   const handleLogout = async () => {
-
     await signOut(auth);
-
     alert("Logged Out");
-
     navigate("/student-login");
-
   };
 
   return (
-
     <div className="min-h-screen bg-slate-950 flex items-center justify-center p-5">
-
       <div className="bg-slate-900 w-full max-w-lg rounded-3xl p-8">
-
         <h1 className="text-4xl font-bold text-center text-white mb-8">
-
           My Profile
-
         </h1>
 
         <div className="space-y-5 text-white text-xl">
-
-          <div>
-            <b>Name :</b> {student.name}
-          </div>
-
-          <div>
-            <b>Email :</b> {student.email}
-          </div>
-
-          <div>
-            <b>Enrollment :</b> {student.enrollment}
-          </div>
-
-          <div>
-            <b>Branch :</b> {student.branch}
-          </div>
-
-          <div>
-            <b>Year :</b> {student.year}
-          </div>
-
-          <div>
-            <b>Bus Route :</b> {student.route}
-          </div>
-
-          <div>
-            <b>Phone :</b> {student.phone}
-          </div>
-
+          <div><b>Name :</b> {student.name}</div>
+          <div><b>Email :</b> {student.email}</div>
+          <div><b>Enrollment :</b> {student.enrollment}</div>
+          <div><b>Branch :</b> {student.branch}</div>
+          <div><b>Year :</b> {student.year}</div>
+          <div><b>Bus Route :</b> {student.route}</div>
+          <div><b>Phone :</b> {student.phone}</div>
         </div>
 
         <button
@@ -109,13 +74,9 @@ function StudentProfile() {
         >
           Logout
         </button>
-
       </div>
-
     </div>
-
   );
-
 }
 
 export default StudentProfile;

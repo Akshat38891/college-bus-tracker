@@ -11,6 +11,7 @@ import React, {
   useEffect,
   useMemo,
   useState
+  useCallback
 } from "react";
 
 import {
@@ -129,35 +130,33 @@ function StudentTrack() {
 
   // DISTANCE CALCULATION
 
-  const calculateDistance = (
-    stopIndex
-  ) => {
+  const calculateDistance = useCallback((stopIndex) => {
 
-    const remainingStops =
-      stops.length - stopIndex - 1;
+  const remainingStops =
+    stops.length - stopIndex - 1;
 
-    const distanceKm =
-      remainingStops * 2;
+  const distanceKm =
+    remainingStops * 2;
 
-    setDistance(distanceKm);
+  setDistance(distanceKm);
 
-    const estimatedMinutes =
-      distanceKm * 3;
+  const estimatedMinutes =
+    distanceKm * 3;
 
-    setEta(estimatedMinutes);
+  setEta(estimatedMinutes);
 
-  };
+}, [stops.length]);
 
 
   // UPDATE DISTANCE
 
   useEffect(() => {
 
-    calculateDistance(
-      currentStopIndex
-    );
+  calculateDistance(
+    currentStopIndex
+  );
 
-  }, [currentStopIndex]);
+}, [currentStopIndex, calculateDistance]);
 
 
   // NOTIFY DRIVER
