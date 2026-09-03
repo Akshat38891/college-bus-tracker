@@ -10,8 +10,8 @@ import "leaflet/dist/leaflet.css";
 import React, {
   useEffect,
   useMemo,
-  useState
-  useCallback
+  useState,
+  useCallback,
 } from "react";
 
 import {
